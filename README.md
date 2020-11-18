@@ -11,19 +11,19 @@ private boolean check = true;
 
 2. check의 상태에 따라 변경되는 TextField
 ``` java
-if(check) {										              // 원 -> 달러의 상태
+if(check) {                               // 원 -> 달러의 상태
   JButton b = (JButton)e.getSource();			
   String oldtext = tf1.getText();				
   String text = b.getText();					
   String newtext = oldtext + text;
-  tf1.setText(newtext);							        // tf1에 값 기록
+  tf1.setText(newtext);                   // tf1에 값 기록
 }
-else if(!check) {                           // 달러 -> 원의 상태
+else if(!check) {                         // 달러 -> 원의 상태
   JButton b = (JButton)e.getSource();
   String oldtext = tf2.getText();			
   String text = b.getText();
   String newtext = oldtext + text;
-  tf2.setText(newtext);							        // tf2에 값 기록
+  tf2.setText(newtext);                   // tf2에 값 기록
 }
 
 // 이후 필요한 주석은 코드안에 기록
