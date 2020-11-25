@@ -10,11 +10,11 @@ class MyFrame extends JFrame{
 		initUI();
 	}
 	public final void initUI() {
-		Set_button_textfield();									// ¹öÆ°°ú textFieldµéÀÇ »ı¼º°ú ¼³Á¤ µ¿ÀÛÀÌ ±¸ÇöµÈ ÇÔ¼ö ½ÇÇà
-		Set_gui();												// gui ¼³Á¤ÀÌ ±¸ÇöµÈ ÇÔ¼ö ½ÇÇà
+		Set_button_textfield();									// ë²„íŠ¼ê³¼ textFieldë“¤ì˜ ìƒì„±ê³¼ ì„¤ì • ë™ì‘ì´ êµ¬í˜„ëœ í•¨ìˆ˜ ì‹¤í–‰
+		Set_gui();										// gui ì„¤ì •ì´ êµ¬í˜„ëœ í•¨ìˆ˜ ì‹¤í–‰
     }
 
-	static boolean check=true;									// ¿©·¯ ÇÔ¼ö¿¡¼­ »ç¿ëÇÏ´Â check ÀÌ±â¿¡ Àü¿ªº¯¼ö·Î ÇÒ´ç
+	static boolean check=true;									// ì—¬ëŸ¬ í•¨ìˆ˜ì—ì„œ ì‚¬ìš©í•˜ëŠ” check ì´ê¸°ì— ì „ì—­ë³€ìˆ˜ë¡œ í• ë‹¹
 	
 	public void Set_gui(){
         setTitle("GUI TITLE");
@@ -25,13 +25,13 @@ class MyFrame extends JFrame{
         setVisible(true);
         
 	}public void Set_button_textfield() {					
-		JButton btn_insert1 = new JButton("1");    					//¹öÆ°, textField »ı¼º
+		JButton btn_insert1 = new JButton("1");    					//ë²„íŠ¼, textField ìƒì„±
         JButton reset = new JButton("reset ");
-        JButton transform = new JButton("º¯È¯");
-        JButton btn_won_to_dollor = new JButton("¿ø -> ´Ş·¯");
-        JButton btn_dollor_to_won = new JButton("´Ş·¯ -> ¿ø");    
-        TextField tf1 = new TextField(30);			//¿ø
-        TextField tf2 = new TextField(30);			//´Ş·¯
+        JButton transform = new JButton("ë³€í™˜");
+        JButton btn_won_to_dollor = new JButton("ì› -> ë‹¬ëŸ¬");
+        JButton btn_dollor_to_won = new JButton("ë‹¬ëŸ¬ -> ì›");    
+        TextField tf1 = new TextField(30);			//ì›
+        TextField tf2 = new TextField(30);			//ë‹¬ëŸ¬
         btn_won_to_dollor.setPreferredSize(new Dimension(200,50));
         btn_dollor_to_won.setPreferredSize(new Dimension(200,50));
         this.add(btn_insert1);
@@ -41,46 +41,46 @@ class MyFrame extends JFrame{
 
         btn_insert1.addActionListener(new ActionListener(){	
 			public void actionPerformed(ActionEvent e) {
-				if(check) {											// ¸¸¾à check°¡ true¸é ½ÇÇà : ÇöÀç »óÅÂ°¡ ¿ø->´Ş·¯    tf1¿¡ ±â·Ï
-					JButton b = (JButton)e.getSource();				// ÀÌºÎºĞÀº ³ªÁß¿¡ ³Ê°¡ ¹öÆ° °ª °¡Á®¿Ã¶§ ¾²¸éµÉ²¨¾ß 
+				if(check) {								// ë§Œì•½ checkê°€ trueë©´ ì‹¤í–‰ : í˜„ì¬ ìƒíƒœê°€ ì›->ë‹¬ëŸ¬    tf1ì— ê¸°ë¡
+					JButton b = (JButton)e.getSource();				// ì´ë¶€ë¶„ì€ ë‚˜ì¤‘ì— ë„ˆê°€ ë²„íŠ¼ ê°’ ê°€ì ¸ì˜¬ë•Œ ì“°ë©´ë êº¼ì•¼ 
 					String oldtext = tf1.getText();					//
-					String text = b.getText();						// º¯¼öÀÇ °ªÀ» ÀúÀåÇÏ°í »õ·Î¿î °ªÀ¸·Î ÀúÀå
-					String newtext = oldtext + text;				// ±âÁ¸ °ª°ú »õ·Î¿î °ªÀ» ÇÕÄ¡±â
-					tf1.setText(newtext);							// ÇÕÃÄÁø ¹®ÀÚ¸¦ tf1¿¡ ÀúÀå
+					String text = b.getText();					// ë³€ìˆ˜ì˜ ê°’ì„ ì €ì¥í•˜ê³  ìƒˆë¡œìš´ ê°’ìœ¼ë¡œ ì €ì¥
+					String newtext = oldtext + text;				// ê¸°ì¡´ ê°’ê³¼ ìƒˆë¡œìš´ ê°’ì„ í•©ì¹˜ê¸°
+					tf1.setText(newtext);						// í•©ì³ì§„ ë¬¸ìë¥¼ tf1ì— ì €ì¥
 				}
-				else if(!check) {									// ¸¸¾à check°¡ false¸é ½ÇÇà : ÇöÀç »óÅÂ°¡ ´Ş·¯->¿ù   tf2¿¡ ±â·Ï
+				else if(!check) {							// ë§Œì•½ checkê°€ falseë©´ ì‹¤í–‰ : í˜„ì¬ ìƒíƒœê°€ ë‹¬ëŸ¬->ì›”   tf2ì— ê¸°ë¡
 					JButton b = (JButton)e.getSource();
-					String oldtext = tf2.getText();					// ¹öÆ°ÀÇ °ª ÀúÀåÀ§ ¹æ½ÄÀº À§¿Í µ¿ÀÏ
+					String oldtext = tf2.getText();					// ë²„íŠ¼ì˜ ê°’ ì €ì¥ìœ„ ë°©ì‹ì€ ìœ„ì™€ ë™ì¼
 					String text = b.getText();
 					String newtext = oldtext + text;
 					tf2.setText(newtext);
 				}
 			}
-		});reset.addActionListener(new ActionListener(){			// ¸®¼Â ¹öÆ°
+		});reset.addActionListener(new ActionListener(){			                // ë¦¬ì…‹ ë²„íŠ¼
 			public void actionPerformed(ActionEvent e) {
 				JButton b = (JButton)e.getSource();
-				tf1.setText("");									//tf1 ÅØ½ºÆ®¸¦ ºóÄ­À¸·Î
-				tf2.setText("");									//tf2 ÅØ½ºÆ®¸¦ ºóÄ­À¸·Î
+				tf1.setText("");							//tf1 í…ìŠ¤íŠ¸ë¥¼ ë¹ˆì¹¸ìœ¼ë¡œ
+				tf2.setText("");							//tf2 í…ìŠ¤íŠ¸ë¥¼ ë¹ˆì¹¸ìœ¼ë¡œ
 			}
-		});btn_won_to_dollor.addActionListener(new ActionListener(){	//¿ø -> ´Ş·¯ ¹öÆ°
+		});btn_won_to_dollor.addActionListener(new ActionListener(){	                        //ì› -> ë‹¬ëŸ¬ ë²„íŠ¼
 			public void actionPerformed(ActionEvent e) {
-				check = true;											// Àü¿ªº¯¼ö·Î check ¸¸µçÈÄ¿¡ ¹öÆ°ÀÌ ´­·¯Áö¸é true·Î º¯°æ
+				check = true;								// ì „ì—­ë³€ìˆ˜ë¡œ check ë§Œë“ í›„ì— ë²„íŠ¼ì´ ëˆŒëŸ¬ì§€ë©´ trueë¡œ ë³€ê²½
 			}
-		});btn_dollor_to_won.addActionListener(new ActionListener(){	//´Ş·¯ -> ¿ø
+		});btn_dollor_to_won.addActionListener(new ActionListener(){	                        //ë‹¬ëŸ¬ -> ì›
 			public void actionPerformed(ActionEvent e) {
-				check = false;											// ¹öÆ°ÀÌ ´­·¯Áö¸é false·Î º¯°æ
+				check = false;								// ë²„íŠ¼ì´ ëˆŒëŸ¬ì§€ë©´ falseë¡œ ë³€ê²½
 			}
 		});transform.addActionListener(new ActionListener(){	
 			public void actionPerformed(ActionEvent e) {
-				if(check) {											// ¸¸¾à check°¡ true¸é ½ÇÇà : ÇöÀç »óÅÂ°¡ ¿ø->´Ş·¯
-					String won = tf1.getText();						// tf1°ªÀ» won¿¡ stringÅ¸ÀÔÀ¸·Î ÀúÀå
-					double dollor = Double.valueOf(won)*1100.0;		// wonÀ» °è»êÀ» À§ÇØ double·Î Å¸ÀÔº¯È¯ ÈÄ *1100.0 ÇÏ¿© ÀúÀå  
-					tf2.setText(String.valueOf(dollor));			// doubleÇü dollorÀ» stringÀ¸·Î Å¸ÀÔº¯È¯ ÈÄ tf2¿¡ ÀúÀå
+				if(check) {								// ë§Œì•½ checkê°€ trueë©´ ì‹¤í–‰ : í˜„ì¬ ìƒíƒœê°€ ì›->ë‹¬ëŸ¬
+					String won = tf1.getText();					// tf1ê°’ì„ wonì— stringíƒ€ì…ìœ¼ë¡œ ì €ì¥
+					double dollor = Double.valueOf(won)*1100.0;		        // wonì„ ê³„ì‚°ì„ ìœ„í•´ doubleë¡œ íƒ€ì…ë³€í™˜ í›„ *1100.0 í•˜ì—¬ ì €ì¥  
+					tf2.setText(String.valueOf(dollor));			        // doubleí˜• dollorì„ stringìœ¼ë¡œ íƒ€ì…ë³€í™˜ í›„ tf2ì— ì €ì¥
 				}	
-				else if(!check) {									// ¸¸¾à check°¡ false¶ó¸é Á¶Àü¹® ½ÇÇà
-					String dollor = tf2.getText();					// tf2°ªÀ» double¿¡ stringÅ¸ÀÔÀ¸·Î ÀúÀå
-					double won = Double.valueOf(dollor)/1100.0 ;	// dollor¸¦ °è»êÀ» À§ÇØ double·Î Å¸ÀÔº¯È¯ ÈÄ *1100.0 ÇÏ¿© ÀúÀå  
-					tf1.setText(String.valueOf(won));				// doubleÇü wonÀ» stringÀ¸·Î Å¸ÀÔº¯È¯ ÈÄ tf1¿¡ ÀúÀå
+				else if(!check) {							// ë§Œì•½ checkê°€ falseë¼ë©´ ì¡°ì „ë¬¸ ì‹¤í–‰
+					String dollor = tf2.getText();					// tf2ê°’ì„ doubleì— stringíƒ€ì…ìœ¼ë¡œ ì €ì¥
+					double won = Double.valueOf(dollor)/1100.0 ;	                // dollorë¥¼ ê³„ì‚°ì„ ìœ„í•´ doubleë¡œ íƒ€ì…ë³€í™˜ í›„ *1100.0 í•˜ì—¬ ì €ì¥  
+					tf1.setText(String.valueOf(won));				// doubleí˜• wonì„ stringìœ¼ë¡œ íƒ€ì…ë³€í™˜ í›„ tf1ì— ì €ì¥
 				}
 				
 			}
